@@ -1,0 +1,19 @@
+{
+  "name": "lettering-js",
+  "version": "1.0.0",
+  "description": "A lightweight, easy to use Javascript <span> injector for radical Web Typography",
+  "main": "src/lettering.ts",
+  "repository": "https://github.com/aljopro/lettering-js.git",
+  "author": "John Chappell <aljopro@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jquery": "^3.3.5",
+    "shx": "^0.3.2",
+    "typescript": "^3.0.1",
+    "uglify-js": "^3.4.7"
+  },
+  "scripts": {
+    "build": "tsc -p \"./tsconfig.json\"  && shx cat \"./dist/lettering.js\" \"./dist/lettering.jquery.js\" > \"dist/lettering.bundle.js\" && uglifyjs \"./dist/lettering.js\" -c -m -o \"dist/lettering.min.js\" && uglifyjs \"./dist/lettering.jquery.js\" -c -m -o \"dist/lettering.jquery.min.js\"  && uglifyjs \"./dist/lettering.js\" \"./dist/lettering.jquery.js\" -c -m -o \"dist/lettering.bundle.min.js\""
+  },
+  "dependencies": {}
+}
